@@ -1,0 +1,44 @@
+version: '3.9'
+
+services:
+  backend:
+    build: ../src/Backend
+    container_name: nobat-backend
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+      - redis
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__Default=Host=db;Database=nobat;Username=postgres;Password=postgres
+      - Redis__Configuration=redis:6379
+
+  frontend:
+    build: ../src/Frontend
+    container_name: nobat-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+  db:
+    image: postgres:15
+    container_name: nobat-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: nobat
+    ports:
+      - "5432:5432"
+    volumes:
+      - nobat-data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7
+    container_name: nobat-redis
+    ports:
+      - "6379:6379"
+
+volumes:
+  nobat-data:
