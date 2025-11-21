@@ -1,0 +1,6 @@
+@Nobat.Backend.API_HostAddress = http://localhost:5101
+
+GET {{Nobat.Backend.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

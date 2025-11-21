@@ -1,0 +1,10 @@
+bin/
+obj/
+*.csproj.user
+*.user
+*.suo
+*.userprefs
+.vscode/
+.idea/
+*.sln.iml
+global.json
