@@ -59,3 +59,7 @@ nunit-*.xml
 *.user
 *.userosscache
 *.sln.docstates
+
+# EF Core & Secrets
+appsettings*.json
+*.db
