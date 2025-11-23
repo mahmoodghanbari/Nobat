@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using Nobat.Backend.Infrastructure.Persistence;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
@@ -8,12 +11,28 @@ builder.WebHost.ConfigureKestrel(options =>
     options.ListenAnyIP(5000);
 });
 
+builder.Services.AddDbContext<NobatDbContext>(options =>
+{
+    var connectionString = builder.Configuration.GetConnectionString("Default");
+    options.UseNpgsql(connectionString);
+
+    if (builder.Environment.IsDevelopment())
+    {
+        options.EnableSensitiveDataLogging();
+        options.EnableDetailedErrors();
+    }
+});
+
+builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+
+    app.UseMigrationsEndPoint();
 }
 
 
