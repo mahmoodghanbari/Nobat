@@ -1,4 +1,10 @@
+﻿using FluentValidation;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Nobat.Backend.API.Middleware;
+using Nobat.Backend.Application;
+using Nobat.Backend.Application.Common.Behaviors;
+using Nobat.Backend.Application.Mappings;
 using Nobat.Backend.Infrastructure.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,6 +31,14 @@ builder.Services.AddDbContext<NobatDbContext>(options =>
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
+builder.Services.AddAutoMapper(typeof(MappingProfile));
+
+builder.Services.AddValidatorsFromAssemblyContaining<ApplicationAssemblyMarker>();
+
+builder.Services.AddMediatR(cfg => {
+    cfg.RegisterServicesFromAssemblyContaining<ApplicationAssemblyMarker>();
+    cfg.AddBehavior(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+});
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -55,6 +69,10 @@ app.MapGet("/weatherforecast", () =>
 })
 .WithName("GetWeatherForecast")
 .WithOpenApi();
+
+app.UseExceptionHandler();
+builder.Services.AddExceptionHandler<ValidationExceptionHandler>();
+builder.Services.AddProblemDetails();
 
 app.Run();
 
