@@ -1,0 +1,10 @@
+﻿global using FluentValidation;
+global using MediatR;
+global using Microsoft.AspNetCore.Diagnostics;
+global using Microsoft.AspNetCore.Mvc;
+global using Microsoft.EntityFrameworkCore;
+global using Nobat.Backend.API.Middleware;
+global using Nobat.Backend.Application;
+global using Nobat.Backend.Application.Common.Behaviors;
+global using Nobat.Backend.Application.Mappings;
+global using Nobat.Backend.Infrastructure.Persistence;

@@ -1,6 +1,4 @@
-﻿using FluentValidation;
-
-namespace Nobat.Backend.Application.Features.Queues.Commands.CreateQueue
+﻿namespace Nobat.Backend.Application.Features.Queues.Commands.CreateQueue
 {
     public class CreateQueueCommandValidator : AbstractValidator<CreateQueueCommand>
     {

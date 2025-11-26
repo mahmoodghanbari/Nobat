@@ -1,7 +1,4 @@
-﻿using AutoMapper;
-using MediatR;
-
-namespace Nobat.Backend.Application.Features.Queues.Commands.CreateQueue
+﻿namespace Nobat.Backend.Application.Features.Queues.Commands.CreateQueue
 {
     public class CreateQueueCommandHandler : IRequestHandler<CreateQueueCommand, int>
     {

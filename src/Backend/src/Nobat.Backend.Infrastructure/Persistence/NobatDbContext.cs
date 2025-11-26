@@ -1,6 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-
-namespace Nobat.Backend.Infrastructure.Persistence
+﻿namespace Nobat.Backend.Infrastructure.Persistence
 {
     public sealed class NobatDbContext : DbContext
     {

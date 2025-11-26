@@ -1,6 +1,4 @@
-﻿using FluentValidation.Results;
-
-namespace Nobat.Backend.Application.Common.Exceptions
+﻿namespace Nobat.Backend.Application.Common.Exceptions
 {
     public class AppValidationException : Exception
     {
