@@ -1,6 +1,4 @@
-﻿using AutoMapper;
-
-namespace Nobat.Backend.Application.Mappings
+﻿namespace Nobat.Backend.Application.Mappings
 {
         public class MappingProfile : Profile
         {

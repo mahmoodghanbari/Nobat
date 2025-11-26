@@ -1,7 +1,4 @@
-﻿using AutoMapper;
-using MediatR;
-
-namespace Nobat.Backend.Application.Features.Queues.Commands.CreateQueue
+﻿namespace Nobat.Backend.Application.Features.Queues.Commands.CreateQueue
 {
     public class CreateQueueCommandHandler : IRequestHandler<CreateQueueCommand, int>
     {
@@ -16,7 +13,7 @@ namespace Nobat.Backend.Application.Features.Queues.Commands.CreateQueue
         {
             // var queue = _mapper.Map<Queue>(request);
             // add to the database and save changes
-            return Task.FromResult(0); // return the new queue ID
+            return Task.FromResult(0);  // return the new queue ID
         }
     }
 }

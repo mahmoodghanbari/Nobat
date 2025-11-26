@@ -1,6 +1,4 @@
-﻿using MediatR;
-
-namespace Nobat.Backend.Application.Features.Queues.Commands.CreateQueue
+﻿namespace Nobat.Backend.Application.Features.Queues.Commands.CreateQueue
 {
     public class CreateQueueCommand : IRequest<int>
     {

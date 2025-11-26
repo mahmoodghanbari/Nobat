@@ -1,8 +1,4 @@
-﻿using FluentValidation;
-using Microsoft.AspNetCore.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
-
-namespace Nobat.Backend.API.Middleware
+﻿namespace Nobat.Backend.API.Middleware
 {
     public class ValidationExceptionHandler : IExceptionHandler
     {

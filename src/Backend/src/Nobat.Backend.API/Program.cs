@@ -1,13 +1,4 @@
-﻿using FluentValidation;
-using MediatR;
-using Microsoft.EntityFrameworkCore;
-using Nobat.Backend.API.Middleware;
-using Nobat.Backend.Application;
-using Nobat.Backend.Application.Common.Behaviors;
-using Nobat.Backend.Application.Mappings;
-using Nobat.Backend.Infrastructure.Persistence;
-
-var builder = WebApplication.CreateBuilder(args);
+﻿var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
