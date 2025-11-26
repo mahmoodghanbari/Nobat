@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FluentValidation.Results;
+﻿using FluentValidation.Results;
 
 namespace Nobat.Backend.Application.Common.Exceptions
 {
-    public class AppValidationException : Exception   // ← اینجا عوض شد
+    public class AppValidationException : Exception
     {
         public AppValidationException()
             : base("یک یا چند خطای اعتبارسنجی رخ داده است.")

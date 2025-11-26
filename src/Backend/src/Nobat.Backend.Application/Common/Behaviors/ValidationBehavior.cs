@@ -1,11 +1,5 @@
 ﻿using FluentValidation;
 using MediatR;
-using Nobat.Backend.Application.Common.Exceptions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Nobat.Backend.Application.Common.Behaviors
 {
@@ -34,7 +28,9 @@ namespace Nobat.Backend.Application.Common.Behaviors
                     .ToList();
 
                 if (failures.Count != 0)
+                {
                     throw new Exceptions.AppValidationException(failures);
+                }
             }
 
             return await next();

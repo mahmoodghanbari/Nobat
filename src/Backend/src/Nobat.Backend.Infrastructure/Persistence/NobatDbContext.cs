@@ -1,9 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Nobat.Backend.Infrastructure.Persistence
 {
@@ -13,7 +8,6 @@ namespace Nobat.Backend.Infrastructure.Persistence
             : base(options)
         {
         }
-
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

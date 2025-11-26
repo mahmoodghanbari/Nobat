@@ -1,7 +1,6 @@
-﻿using Microsoft.AspNetCore.Diagnostics;
+﻿using FluentValidation;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using FluentValidation;
-using Nobat.Backend.Application.Common.Exceptions;
 
 namespace Nobat.Backend.API.Middleware
 {
@@ -10,7 +9,9 @@ namespace Nobat.Backend.API.Middleware
         public async ValueTask<bool> TryHandleAsync(HttpContext httpContext, Exception exception, CancellationToken cancellationToken)
         {
             if (exception is not ValidationException validationException)
+            {
                 return false;
+            }
 
             var problemDetails = new ProblemDetails
             {

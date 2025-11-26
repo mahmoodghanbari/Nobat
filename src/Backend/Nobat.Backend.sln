@@ -13,6 +13,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nobat.Backend.API", "src\No
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nobat.Backend.Infrastructure", "src\Nobat.Backend.Infrastructure\Nobat.Backend.Infrastructure.csproj", "{8C403FBC-E731-4513-952A-88D1C15747B2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -80,5 +85,8 @@ Global
 		{43682495-C2A8-40D4-85FF-B4B2E92C342B} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{06F26476-6661-4B20-B7B1-8CED0539303F} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{8C403FBC-E731-4513-952A-88D1C15747B2} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FC837FEC-FC7E-40F0-8E79-4EFE798D9717}
 	EndGlobalSection
 EndGlobal
