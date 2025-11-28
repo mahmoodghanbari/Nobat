@@ -1,4 +1,4 @@
-﻿namespace Nobat.Backend.Infrastructure.Persistence
+namespace Nobat.Backend.Infrastructure.Persistence
 {
     public sealed class NobatDbContext : DbContext
     {
@@ -9,8 +9,11 @@
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(NobatDbContext).Assembly);
-            base.OnModelCreating(modelBuilder);
+			modelBuilder.RegisterAllEntities();
+			modelBuilder.ApplyAllConfigurations();
+			modelBuilder.ApplySoftDeleteFilter();
+
+			base.OnModelCreating(modelBuilder);
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
